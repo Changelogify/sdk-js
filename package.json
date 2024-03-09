@@ -1,0 +1,40 @@
+{
+  "name": "@changelogify/sdk",
+  "version": "1.0.0",
+  "description": "Changelogify SDK to embed widgets",
+  "scripts": {
+    "lint": "eslint src test --ext ts --ext js",
+    "typecheck": "tsc --noEmit",
+    "build": "microbundle -f es,cjs,umd",
+    "dev": "microbundle watch -f es,cjs,umd -o C:/xampp/htdocs/changelogify/",
+    "clean": "rimraf dist"
+  },
+  "source": "src/index.ts",
+  "exports": {
+    "types": "./index.d.ts",
+    "module": "./dist/changelogify.mjs",
+    "import": "./dist/changelogify.mjs",
+    "require": "./dist/changelogify.js",
+    "default": "./dist/changelogify.mjs"
+  },
+  "types": "./dist/changelogify.d.ts",
+  "main": "./dist/changelogify.js",
+  "module": "./dist/changelogify.mjs",
+  "unpkg": "./dist/changelogify.umd.js",
+  "repository": "Changelogify/sdk-js",
+  "keywords": [
+    "changelogify",
+    "changelogs",
+    "sdk",
+    "widget"
+  ],
+  "homepage": "https://changelogify.news/",
+  "authors": [
+    "derpierre65 <git@derpierre65.dev>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "mitt": "^3.0.1"
+  }
+}
