@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Changelogify SDK to embed widgets",
   "scripts": {
-    "lint": "eslint src test --ext ts --ext js",
+    "lint": "eslint --ext .js,.ts .",
+    "lint:fix": "eslint --ext .js,.ts . --fix",
     "typecheck": "tsc --noEmit",
     "build": "microbundle -f es,cjs,umd",
     "dev": "microbundle watch -f es,cjs,umd -o C:/xampp/htdocs/changelogify/",
@@ -34,6 +35,9 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@derpierre65/eslint-config": "github:derpierre65/eslint-config",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
     "microbundle": "^0.15.1",
     "mitt": "^3.0.1"
   }
