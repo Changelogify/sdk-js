@@ -1,6 +1,6 @@
 {
   "name": "@changelogify/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Changelogify SDK to embed widgets",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
@@ -12,12 +12,13 @@
   },
   "source": "src/index.ts",
   "exports": {
-    "types": "./index.d.ts",
+    "types": "./dist/index.d.ts",
     "module": "./dist/changelogify.mjs",
     "import": "./dist/changelogify.mjs",
     "require": "./dist/changelogify.js",
     "default": "./dist/changelogify.mjs"
   },
+  "typings": "./dist/index.d.ts",
   "types": "./dist/changelogify.d.ts",
   "main": "./dist/changelogify.js",
   "module": "./dist/changelogify.mjs",
