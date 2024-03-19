@@ -57,22 +57,26 @@ function addEventListener() {
   // @ts-ignore
   internalEventEmitter.on('changelogify:internal:ready', ([ widgetId, , data, ]) => {
     const widget = widgets.get(widgetId) as AnyWidget;
-    let lastSeenArticles = getStorageValue(widget, 'las');
     let unseenAvailable = false;
 
-    for (const articleId of data.articleIds) {
-      if (!lastSeenArticles.includes(articleId)) {
-        unseenAvailable = true;
-        lastSeenArticles.push(articleId);
+    setStorageValue(widget, 'lar', data.articlesRead);
+
+    if (data.unreadCount > 0) {
+      let lastSeenArticles = getStorageValue(widget, 'las');
+      for (const articleId of data.articleIds) {
+        if (!lastSeenArticles.includes(articleId)) {
+          unseenAvailable = true;
+          lastSeenArticles.push(articleId);
+        }
       }
-    }
 
-    if (lastSeenArticles.length > data.articleIds.length) {
-      lastSeenArticles = data.articleIds;
-    }
+      if (lastSeenArticles.length > data.articleIds.length) {
+        lastSeenArticles = data.articleIds;
+      }
 
-    if (unseenAvailable) {
-      setStorageValue(widget, 'las', lastSeenArticles);
+      if (unseenAvailable) {
+        setStorageValue(widget, 'las', lastSeenArticles);
+      }
     }
 
     if (widget.trigger_type === 'unseen' && unseenAvailable) {
