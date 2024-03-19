@@ -1,13 +1,13 @@
 {
   "name": "@changelogify/sdk",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Changelogify SDK to embed widgets",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "eslint --ext .js,.ts . --fix",
     "typecheck": "tsc --noEmit",
     "build": "microbundle -f es,cjs,umd",
-    "dev": "microbundle watch -f es,cjs,umd -o C:/xampp/htdocs/changelogify/",
+    "dev": "microbundle watch -f es,cjs,umd",
     "clean": "rimraf dist"
   },
   "source": "src/index.ts",
@@ -29,7 +29,10 @@
     "sdk",
     "widget"
   ],
-  "homepage": "https://changelogify.news/",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://changelogify.news",
   "authors": [
     "derpierre65 <git@derpierre65.dev>"
   ],
